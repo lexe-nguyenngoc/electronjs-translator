@@ -1,21 +1,42 @@
 {
-  "name": "game-translator",
+  "name": "quicktrans",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "build": "electron-builder"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "quicktrans",
+    "translate"
+  ],
+  "author": "Lexeq",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "electron": "^34.0.0"
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8"
   },
   "dependencies": {
     "tesseract.js": "^6.0.0",
     "translate": "^3.0.1"
+  },
+  "build": {
+    "appId": "lexe.quicktrans",
+    "productName": "QuickTrans",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "favicon.png"
+    }
   }
 }
